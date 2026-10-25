@@ -1,0 +1,18 @@
+# Sensitive Environment Configuration
+.env
+.env.local
+.env.development
+
+# Python Virtual Environment
+venv/
+env/
+ENV/
+
+# Python Cache
+__pycache__/
+*.py[cod]
+
+# OS & IDE Files
+.DS_Store
+.vscode/
+.idea/
