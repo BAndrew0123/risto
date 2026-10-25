@@ -11,8 +11,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Supabase JS Client Library via CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <!-- Stylesheet -->
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -31,8 +29,7 @@
                 <a href="#about" class="nav-link">Chi Siamo</a>
                 <a href="#menu" class="nav-link">Menù</a>
                 <a href="#gallery" class="nav-link">Galleria</a>
-                <a href="#contact" class="nav-link">Dove Siamo & Contatti</a>
-                <a href="https://maps.app.goo.gl/x5qKcoqUW82T4Qrq6" target="_blank" class="btn btn-gold btn-sm mobile-only-btn">
+                <a href="#orderModal" class="btn btn-gold btn-sm mobile-only-btn open-order-modal">
                     <i class="fa-solid fa-cart-shopping"></i> Ordina Online
                 </a>
             </nav>
@@ -41,10 +38,10 @@
                 <!-- Location Tag Badge -->
                 <a href="https://maps.app.goo.gl/x5qKcoqUW82T4Qrq6" target="_blank" class="location-tag-badge desktop-only" title="Vedi Posizione su Google Maps">
                     <i class="fa-solid fa-location-dot text-gold"></i>
-                    <span>Baia Flaminia, Pesaro</span>
+                    <span>Viale Bruxelles 20, Pesaro</span>
                 </a>
                 <!-- Online Ordering CTA Button -->
-                <a href="https://maps.app.goo.gl/x5qKcoqUW82T4Qrq6" target="_blank" class="btn btn-gold btn-sm desktop-btn">
+                <a href="#orderModal" class="btn btn-gold btn-sm desktop-btn open-order-modal">
                     <i class="fa-solid fa-bag-shopping"></i> Ordina Online
                 </a>
                 <button class="hamburger" id="hamburgerBtn" aria-label="Toggle Navigation">
@@ -62,7 +59,7 @@
         <div class="hero-content">
             <!-- Location Tag in Hero -->
             <div class="badge-tag">
-                <i class="fa-solid fa-location-pin text-gold"></i> Via Baia Flaminia, Pesaro (PU)
+                <i class="fa-solid fa-location-pin text-gold"></i> Viale Bruxelles 20, Pesaro (PU) • Baia Flaminia
             </div>
             
             <h1 class="hero-title">Il Vero Gusto del <span class="gold-text">Kebab Turco</span> a Pesaro</h1>
@@ -77,7 +74,7 @@
             </div>
 
             <div class="hero-actions">
-                <a href="https://maps.app.goo.gl/x5qKcoqUW82T4Qrq6" target="_blank" class="btn btn-gold btn-lg cta-pulse">
+                <a href="#orderModal" class="btn btn-gold btn-lg cta-pulse open-order-modal">
                     <i class="fa-solid fa-cart-shopping"></i> Ordina Online Ora
                 </a>
                 <a href="#menu" class="btn btn-outline btn-lg">
@@ -156,7 +153,7 @@
                 </div>
                 <div style="display: flex; gap: 15px; flex-wrap: wrap;">
                     <a href="#menu" class="btn btn-primary"><i class="fa-solid fa-book-open"></i> Sfoglia il Menù</a>
-                    <a href="https://maps.app.goo.gl/x5qKcoqUW82T4Qrq6" target="_blank" class="btn btn-gold">
+                    <a href="#orderModal" class="btn btn-gold open-order-modal">
                         <i class="fa-solid fa-bag-shopping"></i> Ordina Online
                     </a>
                 </div>
@@ -180,7 +177,7 @@
                         <h3><i class="fa-solid fa-bag-shopping text-gold"></i> Vuoi ordinare da asporto o a domicilio?</h3>
                         <p>Clicca sul pulsante qui a fianco per ordinare subito i tuoi piatti preferiti!</p>
                     </div>
-                    <a href="https://maps.app.goo.gl/x5qKcoqUW82T4Qrq6" target="_blank" class="btn btn-gold btn-lg">
+                    <a href="#orderModal" class="btn btn-gold btn-lg open-order-modal">
                         <i class="fa-solid fa-cart-shopping"></i> Ordina Online Ora
                     </a>
                 </div>
@@ -302,83 +299,6 @@
         </div>
     </section>
 
-    <!-- Location & Contact Section -->
-    <section class="section contact-section" id="contact">
-        <div class="container grid grid-2">
-            
-            <!-- Location Details & Maps Info -->
-            <div class="contact-details">
-                <span class="subheading">DOVE SIAMO & CONTATTI</span>
-                <h2 class="section-title">Vieni a Trovarci a <span class="gold-text">Baia Flaminia</span></h2>
-                <p>Ti aspettiamo a pochi passi dalla spiaggia di Baia Flaminia a Pesaro per un pranzo veloce o un'ottima cena d'asporto!</p>
-                
-                <div class="contact-cards">
-                    <!-- Location Tag Card -->
-                    <div class="c-card highlighted-location-card">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <div>
-                            <h5>Posizione / Indirizzo</h5>
-                            <p><strong>Via Baia Flaminia, 61121 Pesaro (PU), Italia</strong></p>
-                            <span class="location-tag-label"><i class="fa-solid fa-map-pin"></i> Baia Flaminia Coast</span>
-                        </div>
-                    </div>
-
-                    <div class="c-card">
-                        <i class="fa-solid fa-phone"></i>
-                        <div>
-                            <h5>Telefono & Ordinazioni</h5>
-                            <p><a href="tel:+39072125648">+39 0721 25648</a></p>
-                        </div>
-                    </div>
-
-                    <div class="c-card">
-                        <i class="fa-solid fa-map-location-dot"></i>
-                        <div>
-                            <h5>Google Maps</h5>
-                            <p><a href="https://maps.app.goo.gl/x5qKcoqUW82T4Qrq6" target="_blank" class="gold-text">Apri Indicazioni Stradali <i class="fa-solid fa-arrow-up-right-from-square"></i></a></p>
-                        </div>
-                    </div>
-
-                    <div class="c-card">
-                        <i class="fa-solid fa-clock"></i>
-                        <div>
-                            <h5>Orario di Apertura</h5>
-                            <p>Lunedì – Domenica: 11:30 - 24:00 (Continuato)</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Contact Form -->
-            <div class="contact-form-card">
-                <h3><i class="fa-solid fa-paper-plane text-gold"></i> Scrivici un Messaggio</h3>
-                <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 20px;">
-                    Hai domande su allergeni, eventi o ordini? Compila il modulo e il messaggio verrà inviato direttamente al ristorante.
-                </p>
-
-                <form id="contactForm">
-                    <div class="form-group">
-                        <label for="cName"><i class="fa-regular fa-user"></i> Il Tuo Nome</label>
-                        <input type="text" id="cName" name="name" required placeholder="es. Mario Rossi">
-                    </div>
-                    <div class="form-group">
-                        <label for="cEmail"><i class="fa-regular fa-envelope"></i> Email o Numero di Telefono</label>
-                        <input type="text" id="cEmail" name="email_or_phone" required placeholder="mario@example.com o 333 1234567">
-                    </div>
-                    <div class="form-group">
-                        <label for="cMessage"><i class="fa-regular fa-comment-dots"></i> Messaggio</label>
-                        <textarea id="cMessage" name="message" rows="5" required placeholder="Scrivi qui il tuo messaggio..."></textarea>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary btn-block" id="contactSubmitBtn">
-                        <i class="fa-solid fa-paper-plane"></i> Invia Messaggio
-                    </button>
-                </form>
-            </div>
-
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer class="footer">
         <div class="container footer-content">
@@ -386,6 +306,10 @@
                 <span class="logo-title">ISTANBUL KEBAB</span>
                 <span class="logo-subtitle">HOUSE • BAIA FLAMINIA PESARO</span>
                 <p>Kebab artigianale, piadine calde, grigliate turche e falafel freschi. Qualità 100% Halal a Baia Flaminia, Pesaro.</p>
+                <div style="margin-top: 14px; font-size: 0.88rem; color: var(--color-gold); line-height: 1.6;">
+                    <div><i class="fa-solid fa-location-dot"></i> Viale Bruxelles 20, 61121 Pesaro (PU)</div>
+                    <div><i class="fa-solid fa-phone"></i> +39 351 0353459 &bull; +39 0721 25648</div>
+                </div>
             </div>
             
             <div class="footer-links">
@@ -395,14 +319,13 @@
                     <li><a href="#about">Chi Siamo</a></li>
                     <li><a href="#menu">Il Menù</a></li>
                     <li><a href="#gallery">Galleria</a></li>
-                    <li><a href="#contact">Dove Siamo & Contatti</a></li>
                 </ul>
             </div>
 
             <div class="footer-hours">
                 <h5>Orari di Apertura</h5>
                 <p><strong>Lunedì – Domenica:</strong><br>11:30 - 24:00 (Orario Continuato)</p>
-                <a href="https://maps.app.goo.gl/x5qKcoqUW82T4Qrq6" target="_blank" class="btn btn-gold btn-sm" style="margin-top: 10px;">
+                <a href="#orderModal" class="btn btn-gold btn-sm open-order-modal" style="margin-top: 10px;">
                     <i class="fa-solid fa-bag-shopping"></i> Ordina Online
                 </a>
             </div>
@@ -424,6 +347,155 @@
         </div>
     </footer>
 
+    <!-- Order Online / House Number Modal -->
+    <div class="order-modal-backdrop" id="orderModal" aria-hidden="true" role="dialog" aria-labelledby="orderModalTitle">
+        <div class="order-modal-box">
+            <button class="order-modal-close" id="orderModalClose" aria-label="Chiudi Finestra">&times;</button>
+            
+            <div class="order-modal-header text-center">
+                <div class="order-modal-icon">
+                    <i class="fa-solid fa-phone-volume"></i>
+                </div>
+                <span class="subheading">ORDINAZIONI & ASPORTO</span>
+                <h3 id="orderModalTitle" class="order-modal-title">Ordina da <span class="gold-text">Istanbul Kebab House</span></h3>
+                <div id="orderModalDishNotice" class="order-dish-notice" style="display: none;"></div>
+                <p class="order-modal-subtitle">
+                    Chiama direttamente il ristorante per ordinare da asporto o a domicilio, oppure invia un messaggio su WhatsApp!
+                </p>
+            </div>
+
+            <div class="order-contact-cards">
+                <!-- Mobile / WhatsApp House Number Card -->
+                <div class="order-card primary-contact">
+                    <div class="order-card-header">
+                        <div class="order-icon-badge whatsapp-badge">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </div>
+                        <div class="order-card-info">
+                            <span class="order-badge-tag">Consigliato • Cellulare & WhatsApp</span>
+                            <h4>Numero del Locale</h4>
+                            <div class="order-phone-number">+39 351 0353459</div>
+                        </div>
+                    </div>
+                    <div class="order-action-buttons">
+                        <a href="tel:+393510353459" class="btn btn-gold btn-block">
+                            <i class="fa-solid fa-phone"></i> Chiama Subito
+                        </a>
+                        <a href="https://wa.me/393510353459?text=Salve%20Istanbul%20Kebab%20House%2C%20vorrei%20effettuare%20un%20ordine" id="modalWhatsappBtn" target="_blank" class="btn btn-whatsapp btn-block">
+                            <i class="fa-brands fa-whatsapp"></i> Ordina su WhatsApp
+                        </a>
+                        <button type="button" class="btn btn-secondary btn-block" id="copyPhoneBtn">
+                            <i class="fa-regular fa-copy"></i> Copia Numero
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Landline House Number Card -->
+                <div class="order-card">
+                    <div class="order-card-header">
+                        <div class="order-icon-badge landline-badge">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div class="order-card-info">
+                            <span class="order-badge-tag">Telefono Fisso Ristorante</span>
+                            <h4>Numero Fisso</h4>
+                            <div class="order-phone-number">+39 0721 25648</div>
+                        </div>
+                    </div>
+                    <div class="order-action-buttons">
+                        <a href="tel:+39072125648" class="btn btn-outline btn-block">
+                            <i class="fa-solid fa-phone-volume"></i> Chiama Fisso: 0721 25648
+                        </a>
+                    </div>
+                </div>
+
+                <!-- House Address & Civico Card -->
+                <div class="order-card address-card">
+                    <div class="order-card-header">
+                        <div class="order-icon-badge location-badge">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div class="order-card-info">
+                            <span class="order-badge-tag">Indirizzo & Numero Civico</span>
+                            <h4>Vieni a Ritirare (Take Away)</h4>
+                            <div class="order-address-text">
+                                <strong>Viale Bruxelles 20</strong>, 61121 Pesaro (PU)
+                                <span class="order-address-sub">Baia Flaminia</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-action-buttons">
+                        <a href="https://maps.app.goo.gl/x5qKcoqUW82T4Qrq6" target="_blank" class="btn btn-outline btn-block">
+                            <i class="fa-solid fa-map-location-dot"></i> Indicazioni Stradali Google Maps
+                        </a>
+                        <button type="button" class="btn btn-secondary btn-block" id="copyAddressBtn">
+                            <i class="fa-regular fa-copy"></i> Copia Indirizzo
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="order-modal-footer text-center">
+                <p><i class="fa-solid fa-clock text-gold"></i> Orario di Apertura: <strong>11:30 – 24:00</strong> (Tutti i giorni, orario continuato)</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dish Details & Ingredients Modal -->
+    <div class="order-modal-backdrop" id="dishDetailsModal" aria-hidden="true" role="dialog" aria-labelledby="dishModalTitle">
+        <div class="order-modal-box dish-details-box">
+            <button class="order-modal-close" id="dishDetailsModalClose" aria-label="Chiudi Finestra">&times;</button>
+            
+            <div class="dish-modal-header">
+                <div class="dish-modal-img-wrap">
+                    <img id="dishModalImg" src="" alt="Dettaglio Piatto">
+                    <span id="dishModalPrice" class="dish-modal-price-tag"></span>
+                </div>
+                <div class="dish-modal-info">
+                    <span class="subheading" id="dishModalCategory">SPECIALITÀ TURCA</span>
+                    <h3 id="dishModalTitle" class="dish-modal-title">Nome Piatto</h3>
+                    <div id="dishModalSub" class="dish-modal-sub">Descrizione breve</div>
+                    <div id="dishModalBadges" class="dish-modal-badges"></div>
+                </div>
+            </div>
+
+            <div class="dish-modal-body">
+                <p id="dishModalDesc" class="dish-modal-desc"></p>
+
+                <!-- Ingredients Section -->
+                <div class="dish-info-block">
+                    <h5><i class="fa-solid fa-carrot text-gold"></i> Cosa c'è dentro (Ingredienti)</h5>
+                    <p class="dish-info-subtext">Verifica gli ingredienti se desideri escludere qualcosa dal tuo piatto:</p>
+                    <ul id="dishModalIngredients" class="dish-ingredients-list"></ul>
+                </div>
+
+                <!-- Allergens Section -->
+                <div class="dish-info-block">
+                    <h5><i class="fa-solid fa-triangle-exclamation text-crimson"></i> Allergeni & Note Alimentari</h5>
+                    <ul id="dishModalAllergens" class="dish-allergens-list"></ul>
+                </div>
+
+                <!-- Customization Advice -->
+                <div class="dish-custom-hint">
+                    <i class="fa-solid fa-circle-question text-gold"></i>
+                    <div>
+                        <strong>Vuoi togliere o personalizzare qualcosa?</strong>
+                        <p id="dishModalCustom">Quando effettui l'ordine, puoi specificare liberamente cosa non gradisci (es. senza cipolla, salse a parte, non piccante).</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dish-modal-footer">
+                <button type="button" class="btn btn-secondary" id="dishModalCloseBtn">
+                    <i class="fa-solid fa-arrow-left"></i> Torna al Menù
+                </button>
+                <button type="button" class="btn btn-gold" id="dishModalOrderCtaBtn">
+                    <i class="fa-solid fa-phone"></i> Ordina Questo Piatto
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- Lightbox Modal for Gallery -->
     <div class="modal" id="imageModal">
         <span class="modal-close" id="modalClose">&times;</span>
@@ -434,8 +506,6 @@
     <!-- Notification Toast Container -->
     <div class="toast-container" id="toastContainer"></div>
 
-    <!-- Dynamic Environment Config Script (loaded from .env by main.py) -->
-    <script src="config.js"></script>
     <!-- JavaScript File -->
     <script src="app.js"></script>
 </body>
